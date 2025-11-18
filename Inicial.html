@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pró Vida</title>
+
+  <style>
+    /* ============================
+       RESET E CONFIGURAÇÕES GERAIS
+       ============================ */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #fff;
+      color: #000;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    /* ============================
+       CABEÇALHO
+       ============================ */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 30px;
+      border-bottom: 1px solid #ccc;
+      background: #fff;
+      position: relative;
+      z-index: 100;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: bold;
+    }
+
+    .logo img {
+      width: 70px;
+      height: 50px;
+    }
+
+    /* ============================
+       MENU HAMBÚRGUER SEM SCRIPT
+       (checkbox hack)
+       ============================ */
+
+    /* Checkbox escondido */
+    #menu-toggle {
+      display: none;
+    }
+
+    /* Ícone hambúrguer */
+    .hamburger {
+      font-size: 28px;
+      cursor: pointer;
+      display: none; /* aparece só no celular */
+      user-select: none;
+    }
+
+    /* Menu em desktop */
+    nav {
+      display: flex;
+      gap: 20px;
+    }
+
+    nav a {
+      text-decoration: none;
+      font-weight: bold;
+      color: #000;
+    }
+
+    nav a:hover {
+      color: #d60000;
+    }
+
+    /* ============================
+       CONTEÚDO PRINCIPAL
+       ============================ */
+    main {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      padding: 30px 20px;
+      gap: 20px;  /* Espaço controlado manualmente */
+      text-align: justify;
+    }
+
+    .content {
+      flex: 1;          /* ocupa o restante */
+      max-width: 750px; /* garante leitura confortável */
+    }
+
+    /* Banner */
+    .banner {
+      width: 100%;
+      height: 220px;
+      background: #ccc url('topoteste.jpg') center/cover no-repeat;
+      border-radius: 8px;
+      margin-bottom: 20px;
+    }
+
+    h2 {
+      text-align: left;
+      margin-top: 25px;
+      margin-bottom: 10px;
+      font-size: 22px;
+    }
+
+    .btn {
+      display: inline-block;
+      background: #d60000;
+      color: #fff;
+      padding: 10px 20px;
+      margin-top: 10px;
+      border-radius: 5px;
+      text-decoration: none;
+    }
+
+    .btn:hover {
+      background: #b00000;
+    }
+
+    /* ============================
+       ASIDE DIREITA
+       ============================ */
+    aside.right {
+      width: 20%;                 /* sempre 20% da largura */
+      background: #f4f4f4;        /* cinza claro */
+      padding: 15px;
+      border-left: 2px solid #ccc;
+      border-radius: 8px;
+      line-height: 1.6;
+    }
+
+    aside.right h3 {
+      color: #d60000;
+      margin-bottom: 10px;
+      text-align: left;
+    }
+
+    aside.right ul {
+      list-style: none;
+    }
+
+    /* ============================
+       RODAPÉ
+       ============================ */
+    footer {
+      text-align: center;
+      border-top: 1px solid #ccc;
+      padding: 15px;
+      background: #fafafa;
+      margin-top: auto;
+    }
+
+    /* ======================================
+       RESPONSIVIDADE PARA CELULAR
+       ====================================== */
+    @media (max-width: 900px) {
+
+      /* Ícone do menu aparece */
+      .hamburger {
+        display: block;
+      }
+
+      /* Menu some no mobile */
+      nav {
+        display: block;
+        position: absolute;
+        top: 65px;
+        right: 20px;
+        background: white;
+        width: 180px;
+        padding: 15px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0,0,0,0.15);
+        opacity: 0;
+        transform: translateY(-10px);
+        pointer-events: none;
+        transition: 0.3s;
+      }
+
+      nav a {
+        display: block;
+        padding: 10px 0;
+        border-bottom: 1px solid #eee;
+      }
+
+      /* Quando o checkbox está marcado, o menu aparece */
+      #menu-toggle:checked ~ nav {
+        opacity: 1;
+        pointer-events: auto;
+        transform: translateY(0);
+      }
+
+      /* Conteúdo principal mais estreito */
+      main {
+        flex-direction: column;
+      }
+
+      /* Aside vira bloco */
+      aside.right {
+        width: 100%;
+        margin-top: 20px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ========== CABEÇALHO ========== -->
+  <header>
+
+    <div class="logo">
+      <img src="icone.png.jpg" alt="Ícone de sangue">
+      <span>PRÓ VIDA | Sistema de Controle e Doação de Sangue</span>
+    </div>
+
+    <!-- Checkbox do menu (invisível) -->
+    <input type="checkbox" id="menu-toggle">
+
+    <!-- Ícone hambúrguer -->
+    <label for="menu-toggle" class="hamburger">☰</label>
+
+    <!-- Menu sem script -->
+    <nav>
+      <a href="#inicio">Início</a>
+      <a href="#doadores">Cadastros</a>
+      <a href="#pedidos">Doações</a>
+      <a href="#contato">Contato</a>
+    </nav>
+
+  </header>
+
+  <!-- ========== CONTEÚDO ========== -->
+  <main>
+
+    <div class="content">
+
+      <div class="banner" id="inicio"></div>
+
+      <h2>Como Funciona?</h2>
+           <p>A doação de sangue funciona por meio de um processo seguro que começa com a recepção e cadastro do doador, seguido por uma triagem clínica e uma pré-triagem para verificar os requisitos de saúde. Em seguida, ocorre a coleta do sangue, que dura cerca de 15 minutos e é feita com material esterilizado e descartável. O sangue doado é processado para separar seus componentes (hemácias, plaquetas e plasma) e testado para garantir sua segurança. </p>
+           
+      <h2 id="doadores">Quer se tornar um doador?</h2>
+      <p> Para se tornar um doador de sangue, você precisa ter entre 16 e 69 anos, pesar no mínimo 50 kg e estar em boas condições de saúde. É necessário comparecer a um hemocentro com um documento de identificação com foto, estar alimentado e descansado, e seguir algumas orientações básicas de saúde antes da doação. 
+      <br>Requisitos básicos</br>
+       <ul>
+        <li>Idade: entre 16 e 69 anos. Menores de 18 anos precisam de autorização do responsável legal.</li>
+        <li>Peso: mínimo de 50 kg.</li>
+        <li>Saúde: estar em boas condições de saúde geral. Existem restrições temporárias e permanentes para doadores em diferentes situações. </li></ul>
+        <ul>
+          <br><b>No dia da doação:</b>
+        <li>Documento: apresentar um documento oficial com foto (RG, CNH, carteira de trabalho, etc.).</li>
+        <li>Alimentação: estar alimentado, evitando alimentos gordurosos nas 4 horas anteriores. Se doou após o almoço, aguarde 2 horas.</li>
+        <li>Descanso: ter dormido pelo menos 6 horas nas últimas 24 horas.</li>
+        <li>Higiene: estar em boas condições de higiene. </li>
+        <li>Cuidados pós-doação</li>
+        <li>Beber bastante líquido.</li>
+        <li>Evitar bebidas alcoólicas nas próximas 12 horas.</li>
+        <li>Não praticar exercícios físicos intensos.</li>
+        <br><b><i>Procurar orientação no hemocentro se sentir algum desconforto.</i></b>
+       </ul> </p>
+      <a href="#" class="btn">Cadastre-se</a>
+
+      <h2 id="pedidos">Está precisando de doação de sangue?</h2>
+      <p>Se você ou alguém que você representa está precisando de sangue, basta preencher o formulário de solicitação disponível na plataforma. 
+      <br>Informe seus dados básicos, o motivo do pedido, o local de coleta, a quantidade necessária e um telefone para contato. 
+      <br>Você também pode anexar uma imagem e escolher se deseja que seu pedido apareça no feed para alcançar mais doadores. Após enviar, seu pedido ficará ativo por uma semana. Durante esse período, pessoas com tipo sanguíneo compatível poderão visualizar sua solicitação e entrar em contato diretamente pelo WhatsApp, por meio de uma mensagem automática — mas só se você autorizar.
+      <br>Caso a quantidade de sangue ainda não tenha sido alcançada ao final do prazo, você poderá refazer o pedido com poucos cliques. 
+      <br>Para garantir sua segurança, o sistema não permitirá novas solicitações enquanto houver uma ativa vinculada ao seu CPF.
+      <br>  Aqui, o processo é simples, seguro e pensado para aproximar quem precisa de quem pode ajudar.</p>
+      <a href="#" class="btn">Cadastrar Pedido</a>
+    </div>
+
+    <!-- ========== ASIDE DIREITA ========== -->
+    <aside class="right">
+      <h3>Informações Extras</h3>
+      <ul>
+        <li>🩸Próxima campanha: 10/12</li>
+        <li>🏥 Local: Hemocentro Municipal</li>
+        <li>📞Contato: (14) 3533-2500</li>
+      </ul>
+    </aside>
+
+  </main>
+
+  <!-- ========== RODAPÉ ========== -->
+  <footer id="contato">
+    <p>Rua Pedro de Toledo, 486, Centro - Lins-SP</p>
+    <p>(14) 3533-2500</p>
+    <small>&copy; 2025 – Todos os direitos reservados.</small>
+  </footer>
+
+</body>
+</html>
