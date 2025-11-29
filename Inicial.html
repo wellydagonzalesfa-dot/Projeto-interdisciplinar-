@@ -51,8 +51,7 @@
     }
 
     /* ============================
-       MENU HAMBÚRGUER SEM SCRIPT
-       (checkbox hack)
+       MENU HAMBÚRGUER 
        ============================ */
 
     /* Checkbox escondido */
@@ -91,7 +90,7 @@
       display: flex;
       justify-content: space-between;
       align-items: flex-start;
-      padding: 30px 20px;
+      padding: 30px 30px;
       gap: 20px;  /* Espaço controlado manualmente */
       text-align: justify;
     }
@@ -137,7 +136,7 @@
     aside.right {
       width: 20%;                 /* sempre 20% da largura */
       background: #f4f4f4;        /* cinza claro */
-      padding: 15px;
+      padding: 5px;
       border-left: 2px solid #ccc;
       border-radius: 8px;
       line-height: 1.6;
@@ -145,7 +144,7 @@
 
     aside.right h3 {
       color: #d60000;
-      margin-bottom: 10px;
+      margin-bottom: 5px;
       text-align: left;
     }
 
@@ -162,6 +161,23 @@
       padding: 15px;
       background: #fafafa;
       margin-top: auto;
+    }
+    .rodape-conteudo {
+       display: flex;
+       justify-content: center;
+       align-items: center;
+       gap: 15px; /* Espaço entre a imagem e o texto */
+       text-align: center;
+      }
+
+    .brasao img {
+      width: 70px;
+      height: 50px;
+    }
+
+    .informacoes p,
+    .informacoes small {
+      margin: 0;
     }
 
     /* ======================================
@@ -234,7 +250,6 @@
     <!-- Ícone hambúrguer -->
     <label for="menu-toggle" class="hamburger">☰</label>
 
-    <!-- Menu sem script -->
     <nav>
       <a href="#inicio">Início</a>
       <a href="#doadores">Cadastros</a>
@@ -256,8 +271,8 @@
            
       <h2 id="doadores">Quer se tornar um doador?</h2>
       <p> Para se tornar um doador de sangue, você precisa ter entre 16 e 69 anos, pesar no mínimo 50 kg e estar em boas condições de saúde. É necessário comparecer a um hemocentro com um documento de identificação com foto, estar alimentado e descansado, e seguir algumas orientações básicas de saúde antes da doação. 
-      <br>Requisitos básicos</br>
        <ul>
+        <br><b>Requisitos básicos</b></br>
         <li>Idade: entre 16 e 69 anos. Menores de 18 anos precisam de autorização do responsável legal.</li>
         <li>Peso: mínimo de 50 kg.</li>
         <li>Saúde: estar em boas condições de saúde geral. Existem restrições temporárias e permanentes para doadores em diferentes situações. </li></ul>
@@ -290,7 +305,7 @@
       <h3>Informações Extras</h3>
       <ul>
         <li>🩸Próxima campanha: 10/12</li>
-        <li>🏥 Local: Hemocentro Municipal</li>
+        <li>🏥Local: Hemocentro Municipal</li>
         <li>📞Contato: (14) 3533-2500</li>
       </ul>
     </aside>
@@ -299,10 +314,20 @@
 
   <!-- ========== RODAPÉ ========== -->
   <footer id="contato">
-    <p>Rua Pedro de Toledo, 486, Centro - Lins-SP</p>
-    <p>(14) 3533-2500</p>
-    <small>&copy; 2025 – Todos os direitos reservados.</small>
-  </footer>
+  <div class="rodape-conteudo">
+    
+    <div class="brasao">
+      <img src="brasao.jpeg" alt="brasão Lins">
+    </div>
+
+    <div class="informacoes">
+      <p>Rua Pedro de Toledo, 486, Centro - Lins-SP</p>
+      <p>(14) 3533-2500</p>
+      <small>&copy; 2025 – Todos os direitos reservados.</small>
+    </div>
+
+  </div>
+</footer>
 
 </body>
 </html>
